@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--color-dark);
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  p {
+    color: #fff;
+  }
+  .tdwonder {
+    color: var(--color-deepgreen);
+    font-size: 1.8rem;
+  }
+}
