@@ -19,16 +19,16 @@ import {
   CALCULATE_CART_TOTAL_QUANTITY,
   selectCartTotalQuantity,
 } from "../../redux/slice/cartSlice";
-import newLogo from "../../assets/image-logo.jpg";
+import newLogo from "../../assets/new-logo.jpg";
 
 const logo = (
   <div className={styles.logo}>
     <Link to="/" className={styles.logoLink}>
-      <img height={35} src={newLogo} alt="logo" />
-      <h2>
-        Monique{""}
-        <span>Gardens</span>
-      </h2>
+      <img src={newLogo} alt="logo" />
+      {/* <h2>
+        Monique{""} Gardens
+         <span>Gardens</span> 
+      </h2> */}
     </Link>
   </div>
 );

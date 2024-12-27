@@ -100,7 +100,10 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button type="submit" className="--btn --btn-green --btn-block">
+              <button
+                type="submit"
+                className="--btn --btn-deepgreen --btn-block"
+              >
                 Login
               </button>
               <div className={styles.links}>

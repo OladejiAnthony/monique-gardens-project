@@ -77,7 +77,10 @@ const Register = () => {
                 value={cPassword}
                 onChange={(e) => setCPassword(e.target.value)}
               />
-              <button type="submit" className="--btn --btn-green --btn-block">
+              <button
+                type="submit"
+                className="--btn --btn-deepgreen --btn-block"
+              >
                 Register
               </button>
             </form>

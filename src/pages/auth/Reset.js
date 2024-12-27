@@ -48,7 +48,10 @@ const Reset = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <button type="submit" className="--btn --btn-green --btn-block">
+              <button
+                type="submit"
+                className="--btn --btn-deepgreen --btn-block"
+              >
                 Reset Password
               </button>
               <div className={styles.links}>
