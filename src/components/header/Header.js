@@ -181,12 +181,22 @@ const Header = () => {
                 </Link>
               </AdminOnlyLink>
             </li>
-            <li>
+            <li style={{ width: "60px" }}>
               <NavLink to="/" className={activeLink}>
                 Home
               </NavLink>
             </li>
-            <li style={{ width: "90px" }}>
+            <li style={{ width: "70px" }}>
+              <NavLink to="/portfolio" className={activeLink}>
+                Portfolio
+              </NavLink>
+            </li>
+            <li style={{ width: "80px" }}>
+              <NavLink to="/about" className={activeLink}>
+                About Us
+              </NavLink>
+            </li>
+            <li style={{ width: "85px" }}>
               <NavLink to="/contact" className={activeLink}>
                 Contact Us
               </NavLink>

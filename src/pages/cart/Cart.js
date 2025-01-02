@@ -143,7 +143,7 @@ const Cart = () => {
               </tbody>
             </table>
             <div className={styles.summary}>
-              <button className="--btn --btn-danger" onClick={clearCart}>
+              <button className="--btn --btn-green" onClick={clearCart}>
                 Clear Cart
               </button>
               {/*Checkout */}
@@ -157,7 +157,7 @@ const Cart = () => {
                     <strong>
                       Cart item(s):{" "}
                       <b
-                        style={{ color: "orangered" }}
+                        style={{ color: "#66af46" }}
                       >{`${cartTotalQuantity}`}</b>
                     </strong>
                   </p>
@@ -167,7 +167,7 @@ const Cart = () => {
                   </div>
                   <p>Tax and sipping calculated at checkout</p>
                   <button
-                    className="--btn --btn-primary --btn-block"
+                    className="--btn --btn-green --btn-block"
                     onClick={checkout}
                   >
                     Checkout

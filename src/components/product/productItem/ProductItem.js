@@ -48,7 +48,7 @@ const ProductItem = ({ grid, product, id, name, price, desc, imageURL }) => {
 
         {/*Cart */}
         <button
-          className="--btn --btn-danger"
+          className="--btn --btn-green"
           onClick={() => addToCart(product)}
         >
           Add To Cart

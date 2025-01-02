@@ -1,0 +1,87 @@
+#eShop Project Workflow
+Design/Layout for eShop Ecommerce App
+
+-Project Structure:
+1. Project Design
+2. Frontend: React, Redux Toolkit $ React Icons, SCSS/module
+3. Backend: Firebase (db, storage)
+4. Tools: Emailjs, Imgbb.com, React-toastify, Plausible.com, notiflix, react-country-region-selector, react-star-rate, react-chartjs-2
+5. Payment: Stripe
+6. Hosting: Heroku.com
+7. Others..
+
+    Note -
+    a. Firestore Database - we store our data's
+    b. Firebase Storage - a server where we store our documents i.e images, doc's etc
+
+
+-Folder Setup:
+1. Assets
+2. Components
+3. Pages (admin, auth, cart, contact, home, orderHistory)
+4. Redux-Toolkit
+5. CustomHooks
+6. Firebase (data fetching)
+
+-Workflow:
+1. Basic Routing & Pages implementation
+2. Header or Navbar implementation
+3. Firebase Authentication implementation and React-Toastify setup
+    auth -> register - login - logout - reset (db opeartions)
+4. State Management implementation (redux operation)
+4. Admin Route
+5. Admin Dashboard implementation
+6. Products implementation & Crud & data Fetching
+7. Search filter and sorting implementation  
+8. Product Details implementation - useParams hook
+9. Pagination
+10. Cart implementation
+11. Checkout implementation
+12. Stripe Payment Implementation & Server configuration
+13. Order History & details implementation
+14. Review Product implementation
+15. Admin Dashboard - Info Box component,  
+16. Admin dashboard - View orders, Order Status Chart implementation (https://react-chartjs-2.js.org), Search Filter, Pagination
+17. Contact page
+18. Testing App
+19. Deployment
+20.
+
+
+
+
+--How to get Username from normal signin method
+a. Write logic that extracts texts in the user's login email and convert it to displayName in Header.js     OR
+b. Add username field on your login page and display it
+
+--Stripe Payment Gateway Settings:
+React Strip Example - npm install  @stripe/react-stripe-js @stripe/stripe-js 
+yarn add stripe express dotenv cors (install express server)
+yarn global add nodemon (monitor and start backend server)
+
+//Stripe Dashboard -
+a. publishable key - Check your .env file
+b. secret key -  Check your .env file
+
+--Server configuration:
+a. //Add the fflg scripts to the package.json  file in order to start server:
+    "start:frontend": "react-scripts start",
+    "start:backend": "nodemon server.js",
+    "start": "node server",
+    #Henceforth, you will be using - "yarn start:frontend" and "yarn start:backend" (npm run start:frontend and npm run start:backend) to start this app, no more "yarn start" or "mpm run start" alone.
+
+b. use the Stripe React and Node code on this page to setup express server 
+    https://docs.stripe.com/payments/quickstart
+
+c. Stripe Test Card
+  //stripe.doc/docs/testing:
+    card n0 - 4242 4242 4242 4242.
+    date: any future date (12/34)
+    cvv: any three digits(222)
+  //Check payment history here - 
+  https://dashboard.stripe.com/test/payments
+
+d. Flutterwave
+ npm install flutterwave-v3-react
+
+ 

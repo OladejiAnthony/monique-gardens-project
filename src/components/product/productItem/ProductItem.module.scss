@@ -36,7 +36,7 @@
       }
       p {
         font-weight: 500;
-        color: orangered;
+        color: var(--color-green);
       }
     }
     button {
@@ -85,7 +85,7 @@
       }
       p {
         font-weight: 500;
-        color: var(--color-danger);
+        color: var(--color-green);
       }
     }
     .desc {

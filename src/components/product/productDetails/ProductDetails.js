@@ -92,7 +92,7 @@ const ProductDetails = () => {
           <>
             {/*SEO */}
             <Helmet>
-              <title>{product.name} - eShop Ecommerce Website</title>
+              <title>{product.name} - Monique Ecommerce Website</title>
               <meta name="description" content={product.desc} />
               <meta property="og:title" content={product.name} />
               <meta property="og:description" content={product.desc} />
@@ -144,7 +144,7 @@ const ProductDetails = () => {
                 </div>
 
                 <button
-                  className="--btn --btn-danger"
+                  className="--btn --btn-green"
                   onClick={() => addToCart(product)}
                 >
                   ADD TO CART

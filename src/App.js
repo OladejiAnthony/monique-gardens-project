@@ -9,13 +9,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
 import Cart from "./pages/cart/Cart";
-// import Checkout from "./pages/checkout/Checkout";
-// import CheckoutSuccess from "./pages/checkout/CheckoutSuccess";
-// import CheckoutDetails from "./pages/checkout/CheckoutDetails";
+import Checkout from "./pages/checkout/Checkout";
+import CheckoutSuccess from "./pages/checkout/CheckoutSuccess";
+import CheckoutDetails from "./pages/checkout/CheckoutDetails";
 
-// import ReviewProducts from "./components/reviewProducts/ReviewProducts";
-// import OrderDetails from "./pages/orderDetails/OrderDetails";
-// import OrderHistory from "./pages/ordersHistory/OrderHistory";
+import ReviewProducts from "./components/reviewProducts/ReviewProducts";
+import OrderDetails from "./pages/orderDetails/OrderDetails";
+import OrderHistory from "./pages/ordersHistory/OrderHistory";
 import NotFound from "./pages/notFound/NotFound";
 
 const App = () => {
@@ -45,15 +45,15 @@ const App = () => {
           <Route path="/product-details/:id" element={<ProductDetails />} />
           {/*Cart */}
           <Route path="/cart" element={<Cart />} />
-          {/*  <Route path="/checkout-details" element={<CheckoutDetails />} />
+          <Route path="/checkout-details" element={<CheckoutDetails />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
-          */}
+
           {/*Orders */}
-          {/*  <Route path="/order-history" element={<OrderHistory />} />
+          <Route path="/order-history" element={<OrderHistory />} />
           <Route path="/order-details/:id" element={<OrderDetails />} />
           <Route path="/review-product/:id" element={<ReviewProducts />} />
-          */}
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

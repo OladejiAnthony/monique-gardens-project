@@ -76,7 +76,7 @@ const Contact = () => {
                 </span>
                 <span>
                   <FaEnvelope />
-                  <p>Support@eshop.com</p>
+                  <p>Support@monique.com</p>
                 </span>
                 <span>
                   <GoLocation />
