@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Pages
 import { Home, Contact, Login, Register, Reset, Admin } from "./pages/index";
 //Components
-import { Footer, Header } from "./components/index";
+import { Footer, Header, ProductDetails } from "./components/index";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
-// import Cart from "./pages/cart/Cart";
+import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
+import Cart from "./pages/cart/Cart";
 // import Checkout from "./pages/checkout/Checkout";
 // import CheckoutSuccess from "./pages/checkout/CheckoutSuccess";
 // import CheckoutDetails from "./pages/checkout/CheckoutDetails";
@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/reset" element={<Reset />} />
 
           {/*Admin Route */}
-          {/*  <Route
+          <Route
             path="/admin/*"
             element={
               <AdminOnlyRoute>
@@ -40,12 +40,12 @@ const App = () => {
               </AdminOnlyRoute>
             }
           />
-          */}
+
           {/*Product Details Route */}
-          {/* <Route path="/product-details/:id" element={<ProductDetails />} /> */}
+          <Route path="/product-details/:id" element={<ProductDetails />} />
           {/*Cart */}
-          {/* <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout-details" element={<CheckoutDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          {/*  <Route path="/checkout-details" element={<CheckoutDetails />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           */}

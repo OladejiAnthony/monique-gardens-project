@@ -186,7 +186,7 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            <li style={{ width: "90px" }}>
               <NavLink to="/contact" className={activeLink}>
                 Contact Us
               </NavLink>
@@ -204,7 +204,14 @@ const Header = () => {
 
               <ShowOnLogin>
                 {/* Display Users Name */}
-                <a href="#home" style={{ color: "#ff7722" }}>
+                <a
+                  href="#home"
+                  style={{
+                    color: "#4aaf1d",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <FaUserCircle size={16} />
                   Hi,
                   {displayName}
@@ -217,7 +224,11 @@ const Header = () => {
              */}
 
               <ShowOnLogin>
-                <NavLink to="/order-history" className={activeLink}>
+                <NavLink
+                  to="/order-history"
+                  className={activeLink}
+                  style={{ width: "90px" }}
+                >
                   My Orders
                 </NavLink>
               </ShowOnLogin>
