@@ -1,9 +1,23 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Pages
-import { Home, Contact, Login, Register, Reset, Admin } from "./pages/index";
+import {
+  Home,
+  Contact,
+  About,
+  Login,
+  Register,
+  Reset,
+  Admin,
+  News,
+} from "./pages/index";
 //Components
-import { Footer, Header, ProductDetails } from "./components/index";
+import {
+  Footer,
+  Header,
+  NewsDetails,
+  ProductDetails,
+} from "./components/index";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,6 +31,7 @@ import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 import OrderDetails from "./pages/orderDetails/OrderDetails";
 import OrderHistory from "./pages/ordersHistory/OrderHistory";
 import NotFound from "./pages/notFound/NotFound";
+import Portfolio from "./pages/portfolio/Portfolio";
 
 const App = () => {
   return (
@@ -30,6 +45,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
+          <Route path="/about" element={<About />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="news" element={<News />} />
+          <Route path="news-details/:id" element={<NewsDetails />} />
 
           {/*Admin Route */}
           <Route

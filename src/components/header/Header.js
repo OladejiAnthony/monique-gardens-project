@@ -19,7 +19,7 @@ import {
   CALCULATE_CART_TOTAL_QUANTITY,
   selectCartTotalQuantity,
 } from "../../redux/slice/cartSlice";
-import newLogo from "../../assets/new-logo.jpg";
+import newLogo from "../../assets/logo_top3.png";
 
 const logo = (
   <div className={styles.logo}>
@@ -194,6 +194,11 @@ const Header = () => {
             <li style={{ width: "80px" }}>
               <NavLink to="/about" className={activeLink}>
                 About Us
+              </NavLink>
+            </li>
+            <li style={{ width: "80px" }}>
+              <NavLink to="/news" className={activeLink}>
+                News
               </NavLink>
             </li>
             <li style={{ width: "85px" }}>

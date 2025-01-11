@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Slider from "../../components/slider/Slider";
 import Product from "../../components/product/Product";
+import VisionMission from "../../components/home/VisionMission";
+import Mission from "../../components/home/Mission";
 
 const Home = () => {
   const url = window.location.href;
@@ -25,6 +27,8 @@ const Home = () => {
   return (
     <div>
       <Slider />
+      <VisionMission />
+      <Mission />
       <Product />
     </div>
   );
