@@ -1,6 +1,6 @@
 //News.js
 import React, { useEffect } from "react";
-import "./News.scss";
+import "./Gallery.scss";
 import HeaderImage from "../../components/about/HeaderImage";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -8,7 +8,7 @@ import { STORE_NEWS } from "../../redux/slice/newsSlice";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import spinnerImg from "../../assets/spinner.jpg";
 
-const News = () => {
+const Gallery = () => {
   const { data, isLoading } = useFetchCollection("news"); //reading products data from db
   const dispatch = useDispatch();
   console.log({ data });
@@ -42,7 +42,7 @@ const News = () => {
         <div className="heading">
           <div className="header__box">
             <div className="upper_line"></div>
-            <h2>Latest News and Events</h2>
+            <h2>Videos Clips</h2>
             <div className="lower_line"></div>
           </div>
         </div>
@@ -58,7 +58,7 @@ const News = () => {
           ) : (
             <>
               {data.slice(0, 4).map((n) => (
-                <Link to={`/news-details/${n.id}`} className="news" key={n.id}>
+                <Link to={`/gallery/${n.id}`} className="news" key={n.id}>
                   <img src={n.imageURL} alt={n.name} />
                   <h3>{n.name}</h3>
                   <p>{shortenText(n.desc, 200)}</p>
@@ -72,7 +72,7 @@ const News = () => {
         <div className="heading">
           <div className="header__box">
             <div className="upper_line"></div>
-            <h2>News and Events</h2>
+            <h2>Image Gallery</h2>
             <div className="lower_line"></div>
           </div>
         </div>
@@ -88,7 +88,7 @@ const News = () => {
           ) : (
             <>
               {data.map((n) => (
-                <Link to={`/news-details/${n.id}`} className="news" key={n.id}>
+                <Link to={`/gallery/${n.id}`} className="news" key={n.id}>
                   <img src={n.imageURL} alt={n.name} />
                   <h3>{n.name}</h3>
                   <p>{shortenText(n.desc, 200)}</p>
@@ -103,4 +103,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Gallery;

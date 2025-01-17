@@ -2,12 +2,12 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import newsData from "./newsData";
-import "./NewsDetails.scss";
+import "./GalleryDetails.scss";
 import { STORE_NEWS } from "../../redux/slice/newsSlice";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import { useDispatch } from "react-redux";
 
-const NewsDetails = () => {
+const GalleryDetails = () => {
   const { id } = useParams();
   console.log({ id });
   const { data, isLoading } = useFetchCollection("news"); //reading products data from db
@@ -81,4 +81,4 @@ const NewsDetails = () => {
   );
 };
 
-export default NewsDetails;
+export default GalleryDetails;

@@ -187,8 +187,8 @@ const Header = () => {
               </NavLink>
             </li>
             <li style={{ width: "70px" }}>
-              <NavLink to="/portfolio" className={activeLink}>
-                Portfolio
+              <NavLink to="/gallery" className={activeLink}>
+                Gallery
               </NavLink>
             </li>
             <li style={{ width: "80px" }}>

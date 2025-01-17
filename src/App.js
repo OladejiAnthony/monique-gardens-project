@@ -31,7 +31,7 @@ import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 import OrderDetails from "./pages/orderDetails/OrderDetails";
 import OrderHistory from "./pages/ordersHistory/OrderHistory";
 import NotFound from "./pages/notFound/NotFound";
-import Portfolio from "./pages/portfolio/Portfolio";
+import Gallery from "./pages/gellery/Gallery";
 
 const App = () => {
   return (
@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
           <Route path="/about" element={<About />} />
-          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="news" element={<News />} />
           <Route path="news-details/:id" element={<NewsDetails />} />
 

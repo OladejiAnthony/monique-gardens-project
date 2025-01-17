@@ -7,4 +7,4 @@ export { default as Reset } from "./auth/Reset";
 export { default as Admin } from "./admin/Admin";
 export { default as About } from "./about/About";
 export { default as News } from "./news/News";
-export { default as Portfolio } from "./portfolio/Portfolio";
+export { default as Gallery } from "./gellery/Gallery";

@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   filteredProducts: [],
+  filteredNews: [],
+  filteredGallery: [],
 };
 
 const filterSlice = createSlice({
@@ -20,6 +22,32 @@ const filterSlice = createSlice({
       ); //populate tempProducts array with products under name/category that u searched/queried for
       //console.log(tempProducts)
       state.filteredProducts = tempProducts; //temporary products
+    },
+
+    FILTER_BY_NEWS_SEARCH(state, action) {
+      //console.log(action.payload);
+      const { news, search } = action.payload;
+      const tempNews = news.filter(
+        (newi) =>
+          //filter through all products in the productSlice
+          newi.name.toLowerCase().includes(search.toLowerCase())
+        //we are searching for news name
+      ); //populate tempNews array with news under name/category that you searched/queried for
+      //console.log(tempNews)
+      state.filteredNews = tempNews; //temporary news
+    },
+
+    FILTER_BY_GALLERY_SEARCH(state, action) {
+      //console.log(action.payload);
+      const { gallery, search } = action.payload;
+      const tempGallery = gallery.filter(
+        (newi) =>
+          //filter through all products in the productSlice
+          newi.name.toLowerCase().includes(search.toLowerCase())
+        //we are searching for news name
+      ); //populate tempNews array with news under name/category that you searched/queried for
+      //console.log(tempNews)
+      state.filteredGallery = tempGallery; //temporary news
     },
 
     SORT_PRODUCTS(state, action) {
@@ -100,6 +128,8 @@ const filterSlice = createSlice({
 //actions
 export const {
   FILTER_BY_SEARCH,
+  FILTER_BY_NEWS_SEARCH,
+  FILTER_BY_GALLERY_SEARCH,
   SORT_PRODUCTS,
   FILTER_BY_CATEGORY,
   FILTER_BY_BRAND,
@@ -108,5 +138,7 @@ export const {
 
 //state
 export const selectFilteredProducts = (state) => state.filter.filteredProducts;
+export const selectFilteredNews = (state) => state.filter.filteredNews;
+export const selectFilteredGallery = (state) => state.filter.filteredGallery;
 //reducer
 export default filterSlice.reducer;
