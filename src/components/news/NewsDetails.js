@@ -1,7 +1,6 @@
 // src/components/news/NewsDetails.js
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import newsData from "./newsData";
 import "./NewsDetails.scss";
 import { STORE_NEWS } from "../../redux/slice/newsSlice";
 import useFetchCollection from "../../customHooks/useFetchCollection";
@@ -25,7 +24,6 @@ const NewsDetails = () => {
   const newsItem = data.find((news) => news.id.toString() === id);
 
   console.log({ newsItem });
-  console.log({ newsData });
 
   if (isLoading) {
     return <div>Loading...</div>;

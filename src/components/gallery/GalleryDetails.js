@@ -1,23 +1,22 @@
 // src/components/news/NewsDetails.js
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import newsData from "./newsData";
 import "./GalleryDetails.scss";
-import { STORE_NEWS } from "../../redux/slice/newsSlice";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import { useDispatch } from "react-redux";
+import { STORE_GALLERY } from "../../redux/slice/gallerySlice";
 
 const GalleryDetails = () => {
   const { id } = useParams();
   console.log({ id });
-  const { data, isLoading } = useFetchCollection("news"); //reading products data from db
+  const { data, isLoading } = useFetchCollection("gallery"); //reading products data from db
   const dispatch = useDispatch();
   console.log({ data });
 
   //store the products data coming from db to redux
   useEffect(() => {
     dispatch(
-      STORE_NEWS({
+      STORE_GALLERY({
         newss: data,
       })
     );
@@ -25,7 +24,6 @@ const GalleryDetails = () => {
   const newsItem = data.find((news) => news.id.toString() === id);
 
   console.log({ newsItem });
-  console.log({ newsData });
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -41,7 +39,7 @@ const GalleryDetails = () => {
     return new Intl.DateTimeFormat("en-US", options).format(date); // Outputs "January 13, 2025"
   };
   return (
-    <div className="news__details">
+    <div className="gallery__details">
       <div className="technician-training-card">
         <img
           src={newsItem.imageURL}
@@ -56,20 +54,38 @@ const GalleryDetails = () => {
           <p>{newsItem.desc}</p>
         </div>
       </div>
-      <div>
-        <img src={newsItem.otherImages} alt="otherPics" />
+      <div className="other__images">
+        <img
+          className="other-image"
+          src={newsItem.otherImages}
+          alt="otherPics"
+        />
+        <img
+          className="other-image"
+          src={newsItem.thirdImages}
+          alt="thirdPics"
+        />
+        <img
+          className="other-image"
+          src={newsItem.fourthImages}
+          alt="fourthPics"
+        />
       </div>
 
       <div className="heading">
         <div className="header__box">
           <div className="upper_line"></div>
-          <h2>News and Events</h2>
+          <h2>Gallery Content</h2>
           <div className="lower_line"></div>
         </div>
       </div>
       <div className="news__card">
-        {data.map((news) => (
-          <Link to={`/news-details/${news.id}`} className="news" key={news.id}>
+        {data.slice(0, 4).map((news) => (
+          <Link
+            to={`/gallery-details/${news.id}`}
+            className="news"
+            key={news.id}
+          >
             <img src={news.imageURL} alt={news.name} />
             <h3>{news.name}</h3>
             <p>{news.desc}</p>

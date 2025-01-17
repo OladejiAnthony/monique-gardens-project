@@ -9,17 +9,20 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { ref, deleteObject } from "firebase/storage";
 import Notiflix from "notiflix";
 import { useDispatch, useSelector } from "react-redux";
-import { STORE_NEWS, selectNews } from "../../../redux/slice/newsSlice";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import {
-  FILTER_BY_NEWS_SEARCH,
-  selectFilteredNews,
+  FILTER_BY_GALLERY_SEARCH,
+  selectFilteredGallery,
 } from "../../../redux/slice/filterSlice";
 import Search from "../../search/Search";
 import Pagination from "../../pagination/Pagination";
+import {
+  selectGallery,
+  STORE_GALLERY,
+} from "../../../redux/slice/gallerySlice";
 
 const ViewGallery = () => {
-  const { data, isLoading } = useFetchCollection("news"); //Reading products data from db
+  const { data, isLoading } = useFetchCollection("gallery"); //Reading products data from db
   //console.log(data);
   const [search, setSearch] = useState("");
 
@@ -27,20 +30,26 @@ const ViewGallery = () => {
   //store the products data coming from db to redux
   useEffect(() => {
     dispatch(
-      STORE_NEWS({
-        news: data,
+      STORE_GALLERY({
+        gallery: data,
       })
     );
   }, [dispatch, data]); //dispatch products when data changes
 
   //read products data from redux
-  const news = useSelector(selectNews);
-  const filteredNews = useSelector(selectFilteredNews); //read the same products data from redux and display on the screen. Remember the filteredProducts contain temporary products
-  console.log(filteredNews);
+  const gallery = useSelector(selectGallery);
+  const filteredNews = useSelector(selectFilteredGallery); //read the same products data from redux and display on the screen. Remember the filteredProducts contain temporary products
+  console.log(selectFilteredGallery);
   //Note - we are reading all our products data displayed on this page from the redux filteredProducts state.
 
   //delete Dialog Box
-  const confirmDelete = (id, imageURL, otherImages) => {
+  const confirmDelete = (
+    id,
+    imageURL,
+    otherImages,
+    thirdImages,
+    fourthImages
+  ) => {
     //modal open
     Notiflix.Confirm.show(
       "Delete News!!!",
@@ -48,7 +57,7 @@ const ViewGallery = () => {
       "Delete",
       "Cancel",
       function okCb() {
-        deleteProduct(id, imageURL, otherImages);
+        deleteProduct(id, imageURL, otherImages, thirdImages, fourthImages);
       },
       function cancelCb() {
         console.log("Delete Canceled");
@@ -64,15 +73,27 @@ const ViewGallery = () => {
     );
   };
 
-  const deleteProduct = async (id, imageURL, otherImages) => {
+  const deleteProduct = async (
+    id,
+    imageURL,
+    otherImages,
+    thirdImages,
+    fourthImages
+  ) => {
     try {
       //Delete documents from db
-      await deleteDoc(doc(db, "news", id));
+      await deleteDoc(doc(db, "gallery", id));
       //Delete files from Cloud Storage
-      const storageRef = ref(storage, imageURL, otherImages);
+      const storageRef = ref(
+        storage,
+        imageURL,
+        otherImages,
+        thirdImages,
+        fourthImages
+      );
       await deleteObject(storageRef);
 
-      toast.success("News deleted successfully.");
+      toast.success("Gallery deleted successfully.");
     } catch (error) {
       toast.error(error.messsage);
     }
@@ -82,12 +103,12 @@ const ViewGallery = () => {
   useEffect(() => {
     //console.log(search);
     dispatch(
-      FILTER_BY_NEWS_SEARCH({
-        news,
+      FILTER_BY_GALLERY_SEARCH({
+        gallery,
         search,
       })
     );
-  }, [search, news, dispatch]);
+  }, [search, gallery, dispatch]);
 
   //pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -105,32 +126,41 @@ const ViewGallery = () => {
     <>
       {isLoading && <Loader />}
       <div className={styles.table}>
-        <h2>All News</h2>
+        <h2>Gallery Collectiosn</h2>
         {/*Search Input */}
         <div className={styles.search}>
           <p>
-            <b>{filteredNews.length}</b> news found
+            <b>{filteredNews.length}</b> Gallery found
           </p>
           <Search value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
         {/*Note - before implementing the search filter function, we were filtering originally through the "products" state from redux */}
 
         {filteredNews.length === 0 ? (
-          <p>No News found.</p>
+          <p>No Gallery found.</p>
         ) : (
           <table>
             <thead>
               <tr>
                 <th>s/n</th>
-                <th>image</th>
+                <th>Main Image</th>
                 <th>Name</th>
-                <th>Other Images</th>
+                <th>Second Image</th>
+                <th>Third Image</th>
+                <th>Fourth Image</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {currentProducts.map((product, index) => {
-                const { id, name, imageURL, otherImages } = product; //filteredNews properties
+                const {
+                  id,
+                  name,
+                  imageURL,
+                  otherImages,
+                  thirdImages,
+                  fourthImages,
+                } = product; //filteredNews properties
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -149,8 +179,22 @@ const ViewGallery = () => {
                         style={{ width: "100px" }}
                       />
                     </td>
+                    <td>
+                      <img
+                        src={thirdImages}
+                        alt={name}
+                        style={{ width: "100px" }}
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={fourthImages}
+                        alt={name}
+                        style={{ width: "100px" }}
+                      />
+                    </td>
                     <td className={styles.icons}>
-                      <Link to={`/admin/add-news/${id}`}>
+                      <Link to={`/admin/add-gallery/${id}`}>
                         <FaEdit size={20} fgcolor="green" />
                       </Link>
                       &nbsp;

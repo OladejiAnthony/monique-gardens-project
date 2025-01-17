@@ -4,19 +4,24 @@ import "./Gallery.scss";
 import HeaderImage from "../../components/about/HeaderImage";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { STORE_NEWS } from "../../redux/slice/newsSlice";
+import { STORE_GALLERY } from "../../redux/slice/gallerySlice";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import spinnerImg from "../../assets/spinner.jpg";
+// Import videos
+import video1 from "../../assets/videos/project1.mp4";
+import video2 from "../../assets/videos/project2.mp4";
+import video3 from "../../assets/videos/project3.mp4";
+import video4 from "../../assets/videos/project4.mp4";
 
 const Gallery = () => {
-  const { data, isLoading } = useFetchCollection("news"); //reading products data from db
+  const { data, isLoading } = useFetchCollection("gallery"); //reading products data from db
   const dispatch = useDispatch();
   console.log({ data });
 
   //store the products data coming from db to redux
   useEffect(() => {
     dispatch(
-      STORE_NEWS({
+      STORE_GALLERY({
         newss: data,
       })
     );
@@ -35,19 +40,21 @@ const Gallery = () => {
     const options = { year: "numeric", month: "long", day: "numeric" }; // Customize format
     return new Intl.DateTimeFormat("en-US", options).format(date); // Outputs "January 13, 2025"
   };
+
+  const videos = [video1, video2, video3, video4];
   return (
     <>
       <HeaderImage />
-      <div className="news__section">
+      <div className="gallery__section">
         <div className="heading">
           <div className="header__box">
             <div className="upper_line"></div>
-            <h2>Videos Clips</h2>
+            <h2>Short Clips</h2>
             <div className="lower_line"></div>
           </div>
         </div>
         {/*First Section: 4 cards only */}
-        <div className="news__card">
+        <div className="gallery__card">
           {isLoading ? (
             <img
               src={spinnerImg}
@@ -57,18 +64,31 @@ const Gallery = () => {
             />
           ) : (
             <>
-              {data.slice(0, 4).map((n) => (
-                <Link to={`/gallery/${n.id}`} className="news" key={n.id}>
+              {videos.map((video, index) => (
+                <div key={index} className="video-container">
+                  <video controls>
+                    <source src={video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              ))}
+              {/* {data.slice(0, 4).map((n) => (
+                <Link
+                  to={`/gallery-details/${n.id}`}
+                  className="news"
+                  key={n.id}
+                >
                   <img src={n.imageURL} alt={n.name} />
                   <h3>{n.name}</h3>
                   <p>{shortenText(n.desc, 200)}</p>
                   <span>{formatDateToText(n.createdAt)}</span>
                 </Link>
-              ))}
+              ))} */}
             </>
           )}
         </div>
 
+        <div className="space"></div>
         <div className="heading">
           <div className="header__box">
             <div className="upper_line"></div>
@@ -76,8 +96,9 @@ const Gallery = () => {
             <div className="lower_line"></div>
           </div>
         </div>
+
         {/*Second Section: unlimited cards */}
-        <div className="news__card">
+        <div className="gallery__card">
           {isLoading ? (
             <img
               src={spinnerImg}
@@ -88,7 +109,11 @@ const Gallery = () => {
           ) : (
             <>
               {data.map((n) => (
-                <Link to={`/gallery/${n.id}`} className="news" key={n.id}>
+                <Link
+                  to={`/gallery-details/${n.id}`}
+                  className="gallery"
+                  key={n.id}
+                >
                   <img src={n.imageURL} alt={n.name} />
                   <h3>{n.name}</h3>
                   <p>{shortenText(n.desc, 200)}</p>

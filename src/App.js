@@ -32,6 +32,7 @@ import OrderDetails from "./pages/orderDetails/OrderDetails";
 import OrderHistory from "./pages/ordersHistory/OrderHistory";
 import NotFound from "./pages/notFound/NotFound";
 import Gallery from "./pages/gellery/Gallery";
+import GalleryDetails from "./components/gallery/GalleryDetails";
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/reset" element={<Reset />} />
           <Route path="/about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path="gallery-details/:id" element={<GalleryDetails />} />
           <Route path="news" element={<News />} />
           <Route path="news-details/:id" element={<NewsDetails />} />
 

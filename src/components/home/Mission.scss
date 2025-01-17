@@ -1,12 +1,12 @@
 .mission__section {
   position: relative;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   padding: 1rem 5%;
-  //margin: 1rem 0 5rem 0;
+  margin-bottom: 10rem;
 
   .mission__image {
     flex: 1;
@@ -115,7 +115,7 @@
     flex-direction: column;
     height: auto;
     padding: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 
     .mission__image {
       height: 250px; // Adjust image height for mobile

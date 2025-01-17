@@ -50,6 +50,27 @@
     }
   }
 
+  .other__images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    gap: 80px;
+    margin-top: 20px;
+
+    .other-image {
+      width: 15%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
   .heading {
     width: 100%;
     display: flex;
@@ -181,6 +202,13 @@
     .technician-training-card {
       flex-direction: column; // Stacks the image and content for small screens
       .training-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .other__images {
+      flex-direction: column; // Stacks the images for small screens
+      .other-image {
         width: 100%;
         height: auto;
       }
