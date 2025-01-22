@@ -28,7 +28,10 @@ const AddGallery = () => {
   //-Edit Product code-
   const { id } = useParams(); //console.log(id)
   const news = useSelector(selectGallery); //from redux console.log(news);
-  const newEdit = news.find((item) => item.id === id);
+  const newEdit = Array.isArray(news)
+    ? news.find((item) => item.id === id)
+    : undefined;
+
   //console.log(newsEdit)
 
   //-Add News Code-

@@ -3,6 +3,7 @@ import Slider from "../../components/slider/Slider";
 import Product from "../../components/product/Product";
 import VisionMission from "../../components/home/VisionMission";
 import Mission from "../../components/home/Mission";
+import Testimonial from "../../components/home/Testimonial";
 
 const Home = () => {
   const url = window.location.href;
@@ -29,6 +30,7 @@ const Home = () => {
       <Slider />
       <VisionMission />
       <Mission />
+      <Testimonial />
       <Product />
     </div>
   );

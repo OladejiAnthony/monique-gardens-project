@@ -1,0 +1,261 @@
+@import "../../App.scss";
+
+[aria-labelledby="gallery-label"]:focus {
+  outline: 4px solid transparent;
+}
+
+/**show scrollbar**/
+[aria-labelledby="gallery-label"]::-webkit-scrollbar {
+  height: 0.75rem;
+  visibility: hidden;
+}
+[aria-labelledby="gallery-label"]::-webkit-scrollbar-track {
+  background-color: transparent;
+  outline: hidden;
+}
+[aria-labelledby="gallery-label"]::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  outline: hidden;
+}
+[aria-labelledby="gallery-label"] {
+  scrollbar-color: transparent;
+  scrollbar-width: thin;
+}
+
+/**layout**/
+.testi-carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0px;
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+
+    /**controls**/
+    [aria-label="testi-gallery controls"] {
+      display: inline-flex;
+      align-items: flex-start;
+      align-self: flex-end;
+      gap: 9px;
+      width: 110px;
+      height: 52px;
+      //background: red;
+
+      li {
+        width: 50%;
+        height: 100%;
+        border-radius: 49px;
+        background: transparent;
+        border: 1px solid gray;
+
+        /**button styles**/
+
+        .button-section {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          button {
+            width: 100%;
+            height: 100%;
+            border-width: 0px;
+            background: transparent;
+            color: wheat;
+            cursor: pointer;
+
+            svg:not(:root).svg-inline--fa,
+            svg:not(:host).svg-inline--fa {
+              overflow: visible;
+              box-sizing: content-box;
+              //olor: wheat;
+              width: 15.5px;
+            }
+          }
+        }
+      }
+      li::marker {
+        visibility: hidden;
+        background: transparent;
+        color: transparent;
+      }
+    }
+
+    /***Gallery***/
+
+    [aria-labelledby="testi-gallery-label"] {
+      width: 100%;
+      height: 350px;
+      overflow-y: hidden;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0.25rem 0.25rem 0 0;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      -webkit-scroll-snap-type: mandatory;
+      -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+      -webkit-scroll-snap-points-x: repeat(100%);
+      -ms-scroll-snap-points-x: repeat(100%);
+      scroll-snap-points-x: repeat(100%);
+
+      @include phones {
+        margin-left: 10px;
+      }
+
+      ul {
+        display: flex;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, minmax(300px, 222px));
+        gap: 36px;
+        width: 100%;
+        height: 100%;
+        border-width: 0px;
+        //background: red;
+
+        li {
+          display: flex;
+          width: 516px !important;
+          height: 344px;
+          padding: 40px 32px 32px 32px;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 32px;
+          border-radius: 24px;
+          background: #ffff;
+          border-width: 0px;
+          border: 1px solid rgba(255, 255, 255, 0.28);
+
+          @include mobile {
+            width: 300px !important;
+            padding: 10px;
+            gap: 40px;
+          }
+          @include phones {
+            width: 230px !important;
+            gap: 22px;
+            padding: 10px;
+          }
+
+          .top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 19px;
+            // background: red;
+            width: 100%;
+            height: 140px;
+
+            @include mobile {
+              align-items: flex-start;
+            }
+            @include phones {
+              margin-top: 10px;
+              align-items: flex-start;
+            }
+
+            img {
+              width: 45%;
+              height: 180px;
+              flex-shrink: 0;
+              border-radius: 11px;
+              // background: #D9D9D9;
+
+              @include mobile {
+                width: 50%;
+              }
+
+              @include phones {
+                height: 140px;
+              }
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 56px;
+              width: 190px;
+              @include phones {
+                height: 80px;
+                flex-wrap: nowrap;
+              }
+              h3 {
+                color: #e5e4e7;
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%; /* 30px */
+                letter-spacing: -0.4px;
+
+                @include phones {
+                  font-size: 14px;
+                }
+              }
+              p {
+                color: #e5e4e7;
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%; /* 24px */
+                letter-spacing: -0.32px;
+
+                @include phones {
+                  font-size: 8x;
+                  line-height: 16px;
+                }
+              }
+            }
+          }
+
+          .bottom {
+            padding-top: 32px;
+            padding-left: 0px;
+            width: 100%;
+
+            @include mobile {
+              padding-top: 2px;
+              padding-left: 5px;
+              width: 100%;
+              height: 120px;
+            }
+            @include phones {
+              height: 150px;
+            }
+
+            p {
+              width: 420px;
+              color: #bcb8c6;
+              font-family: "Inter", sans-serif;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%; /* 24px */
+
+              @include mobile {
+                width: 100%;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -65,7 +65,7 @@ const Slider = () => {
                   <hr />
                   {/*Anchor tag slides down to the products section */}
                   <a href="#product" className="--btn --btn-deepgreen">
-                    Shop Now
+                    Shop Products
                   </a>
                 </div>
               </>
