@@ -24,6 +24,11 @@
       border-radius: 8px;
       object-fit: cover;
     }
+    .training-image:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
     .training-content {
       display: flex;
       flex-direction: column;
@@ -64,10 +69,15 @@
     margin-top: 20px;
 
     .other-image {
-      width: 15%;
-      height: auto;
+      width: 35%;
+      height: 200px;
       border-radius: 8px;
       object-fit: cover;
+    }
+    .other-image:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -148,6 +158,12 @@
         height: auto;
         border-radius: 12px;
         object-fit: cover;
+      }
+
+      img:hover {
+        transform: scale(1.02);
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       h3 {

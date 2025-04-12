@@ -40,7 +40,13 @@ const ViewNews = () => {
   //Note - we are reading all our products data displayed on this page from the redux filteredProducts state.
 
   //delete Dialog Box
-  const confirmDelete = (id, imageURL, otherImages) => {
+  const confirmDelete = (
+    id,
+    imageURL,
+    otherImages,
+    secondImage,
+    thirdImage
+  ) => {
     //modal open
     Notiflix.Confirm.show(
       "Delete News!!!",
@@ -48,7 +54,7 @@ const ViewNews = () => {
       "Delete",
       "Cancel",
       function okCb() {
-        deleteProduct(id, imageURL, otherImages);
+        deleteProduct(id, imageURL, otherImages, secondImage, thirdImage);
       },
       function cancelCb() {
         console.log("Delete Canceled");
@@ -64,12 +70,24 @@ const ViewNews = () => {
     );
   };
 
-  const deleteProduct = async (id, imageURL, otherImages) => {
+  const deleteProduct = async (
+    id,
+    imageURL,
+    otherImages,
+    secondImage,
+    thirdImage
+  ) => {
     try {
       //Delete documents from db
       await deleteDoc(doc(db, "news", id));
       //Delete files from Cloud Storage
-      const storageRef = ref(storage, imageURL, otherImages);
+      const storageRef = ref(
+        storage,
+        imageURL,
+        otherImages,
+        secondImage,
+        thirdImage
+      );
       await deleteObject(storageRef);
 
       toast.success("News deleted successfully.");
@@ -125,12 +143,21 @@ const ViewNews = () => {
                 <th>image</th>
                 <th>Name</th>
                 <th>Other Images</th>
+                <th>Other Images (2)</th>
+                <th>Other Images (3)</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {currentProducts.map((product, index) => {
-                const { id, name, imageURL, otherImages } = product; //filteredNews properties
+                const {
+                  id,
+                  name,
+                  imageURL,
+                  otherImages,
+                  secondImage,
+                  thirdImage,
+                } = product; //filteredNews properties
                 return (
                   <tr key={id}>
                     <td>{index + 1}</td>
@@ -145,6 +172,20 @@ const ViewNews = () => {
                     <td>
                       <img
                         src={otherImages}
+                        alt={name}
+                        style={{ width: "100px" }}
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={secondImage}
+                        alt={name}
+                        style={{ width: "100px" }}
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={thirdImage}
                         alt={name}
                         style={{ width: "100px" }}
                       />

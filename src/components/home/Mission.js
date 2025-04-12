@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import "./Mission.scss";
-import abt from "../../assets/mission.jpg";
+import abt from "../../assets/train.jpg";
 
 const Mission = () => {
   return (
@@ -13,11 +13,12 @@ const Mission = () => {
           <div className="lower_line"></div>
         </div>
         <p>
-          At NATA, our mission is to foster a community of skilled and certified
-          auto technicians who are equipped with the latest industry knowledge
-          and best practices. We aim to promote excellence in auto repair
-          services, ensure consumer protection, and uphold the integrity of the
-          profession.
+          We are committed to inspiring and equipping women and youth with the
+          knowledge, skills, and resources to thrive in agriculture and
+          agribusiness. Through training, capacity building, and awareness
+          programs, we promote research-driven practices, smart use of space,
+          and the integration of technology to create sustainable livelihoods
+          and build the next generation of agricultural millionaires.
         </p>
       </div>
       <div className="mission__image">

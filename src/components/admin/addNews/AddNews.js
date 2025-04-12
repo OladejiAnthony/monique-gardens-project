@@ -19,6 +19,8 @@ const initialState = {
   name: "",
   imageURL: "",
   otherImages: "",
+  secondImage: "",
+  thirdImage: "",
   desc: "",
 };
 
@@ -41,6 +43,8 @@ const AddNews = () => {
 
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadOtherProgress, setUploadOtherProgress] = useState(0);
+  const [uploadSecondProgress, setUploadSecondProgress] = useState(0);
+  const [uploadThirdProgress, setUploadThirdProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -107,6 +111,62 @@ const AddNews = () => {
       }
     );
   };
+  const handleSecondImageChange = (e) => {
+    const file = e.target.files[0]; //console.log(file);
+    //const storageRef = ref(storage, `eshop/${file.name}`);
+    const storageRef = ref(storage, `eshop/${Date.now()}${file.name}`); //in our firebase storage we created an eshop folder and we store the files by date & name into it
+    // Upload the file and metadata
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadSecondProgress(progress);
+      },
+      (error) => {
+        toast.error(error.message);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          //console.log(downloadURL);
+          setNewss({
+            ...newss,
+            secondImage: downloadURL,
+          });
+          toast.success("Second Image uploaded succesfully.");
+        });
+      }
+    );
+  };
+  const handleThirdImageChange = (e) => {
+    const file = e.target.files[0]; //console.log(file);
+    //const storageRef = ref(storage, `eshop/${file.name}`);
+    const storageRef = ref(storage, `eshop/${Date.now()}${file.name}`); //in our firebase storage we created an eshop folder and we store the files by date & name into it
+    // Upload the file and metadata
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadThirdProgress(progress);
+      },
+      (error) => {
+        toast.error(error.message);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          //console.log(downloadURL);
+          setNewss({
+            ...newss,
+            thirdImage: downloadURL,
+          });
+          toast.success("Third Image uploaded succesfully.");
+        });
+      }
+    );
+  };
 
   const addNews = (e) => {
     e.preventDefault();
@@ -120,6 +180,8 @@ const AddNews = () => {
         name: newss.name,
         imageURL: newss.imageURL,
         otherImages: newss.otherImages, //add more images if needed
+        secondImage: newss.secondImage,
+        thirdImage: newss.thirdImage,
         desc: newss.desc,
         createdAt: Timestamp.now().toDate(),
       });
@@ -127,6 +189,8 @@ const AddNews = () => {
       setIsLoading(false);
       setUploadProgress(0);
       setUploadOtherProgress(0);
+      setUploadSecondProgress(0);
+      setUploadThirdProgress(0);
       setNewss({ ...initialState }); //set products field back to empty
       toast.success("News Uploaded successfully.");
       navigate("/admin/all-news");
@@ -158,9 +222,17 @@ const AddNews = () => {
     //delete existing image
     if (
       newss.imageURL !== newEdit.imageURL &&
-      newss.otherImages !== newEdit.otherImages
+      newss.otherImages !== newEdit.otherImages &&
+      newss.secondImage !== newEdit.secondImage &&
+      newss.thirdImage !== newEdit.thirdImage
     ) {
-      const storageRef = ref(storage, newEdit.imageURL, newEdit.otherImages);
+      const storageRef = ref(
+        storage,
+        newEdit.imageURL,
+        newEdit.otherImages,
+        newEdit.secondImage,
+        newEdit.thirdImage
+      );
       deleteObject(storageRef);
     }
 
@@ -170,6 +242,8 @@ const AddNews = () => {
         name: newss.name,
         imageURL: newss.imageURL,
         otherImages: newss.otherImages, //add more images if needed
+        secondImage: newss.secondImage,
+        thirdImage: newss.thirdImage,
         desc: newss.desc,
         createdAt: newEdit.createdAt,
         editedAt: Timestamp.now().toDate(),
@@ -201,7 +275,7 @@ const AddNews = () => {
               onChange={(e) => handleInputChange(e)}
             />
 
-            <label>News Image:</label>
+            <label>News Main Image:</label>
             <Card cardClass="group">
               {uploadProgress === 0 ? null : (
                 <div className="progress">
@@ -235,7 +309,7 @@ const AddNews = () => {
                 />
               )}
             </Card>
-            <label>Other Images:</label>
+            <label>Second Image:</label>
             <Card cardClass="group">
               {uploadOtherProgress === 0 ? null : (
                 <div className="progress">
@@ -265,6 +339,74 @@ const AddNews = () => {
                   //required
                   name="otherImages"
                   value={newss.otherImages}
+                  disabled
+                />
+              )}
+            </Card>
+            <label>Third Image:</label>
+            <Card cardClass="group">
+              {uploadSecondProgress === 0 ? null : (
+                <div className="progress">
+                  <div
+                    className="progress-bar"
+                    style={{ width: `${uploadSecondProgress}%` }}
+                  >
+                    {uploadSecondProgress < 100
+                      ? `uploading ${uploadSecondProgress}`
+                      : `Upload Complete ${uploadSecondProgress}%`}
+                  </div>
+                </div>
+              )}
+
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Another Image"
+                name="image"
+                onChange={(e) => handleSecondImageChange(e)}
+              />
+
+              {newss.secondImage === "" ? null : (
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  //required
+                  name="secondImage"
+                  value={newss.secondImage}
+                  disabled
+                />
+              )}
+            </Card>
+            <label>Fourth Images:</label>
+            <Card cardClass="group">
+              {uploadThirdProgress === 0 ? null : (
+                <div className="progress">
+                  <div
+                    className="progress-bar"
+                    style={{ width: `${uploadThirdProgress}%` }}
+                  >
+                    {uploadThirdProgress < 100
+                      ? `uploading ${uploadThirdProgress}`
+                      : `Upload Complete ${uploadThirdProgress}%`}
+                  </div>
+                </div>
+              )}
+
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Another Image"
+                name="image"
+                onChange={(e) => handleThirdImageChange(e)}
+              />
+
+              {newss.thirdImage === "" ? null : (
+                <input
+                  type="text"
+                  placeholder="Image URL"
+                  //required
+                  name="thirdImage"
+                  value={newss.thirdImage}
                   disabled
                 />
               )}

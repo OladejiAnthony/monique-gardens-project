@@ -24,6 +24,11 @@
       border-radius: 8px;
       object-fit: cover;
     }
+    .training-image:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
     .training-content {
       display: flex;
       flex-direction: column;
@@ -46,6 +51,46 @@
         color: #555;
         line-height: 1.6;
         margin-bottom: 10px;
+      }
+    }
+  }
+
+  .other-images {
+    display: flex;
+    gap: 100px; // Adds consistent spacing between images
+    overflow-x: auto; // Allows horizontal scrolling if needed
+    padding: 8px 0; // Adds some vertical padding
+    height: 400px;
+    //width: 100%;
+    align-items: center; // Vertically centers images in the container
+    justify-content: space-between; // Distributes space between images
+
+    // Base styles for all images
+    img {
+      height: 200px;
+      width: 300px;
+      border-radius: 8px;
+      object-fit: cover; // Ensures images maintain aspect ratio
+      flex-shrink: 0; // Prevents images from shrinking
+    }
+
+    // Optional: Add hover effects
+    img:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      height: auto; // Adjust height on smaller screens
+      flex-wrap: wrap; // Allow wrapping on small screens
+      justify-content: center; // Center images when wrapped
+      gap: 12px;
+
+      img {
+        height: 150px;
+        width: 150px;
       }
     }
   }

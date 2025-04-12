@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CompanyBrief.module.scss";
-import companyImage from "../../assets/construction.jpg";
+import companyImage from "../../assets/vision.jpg";
 import { Link } from "react-router-dom";
 
 const CompanyBrief = () => {

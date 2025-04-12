@@ -19,7 +19,7 @@ import {
   CALCULATE_CART_TOTAL_QUANTITY,
   selectCartTotalQuantity,
 } from "../../redux/slice/cartSlice";
-import newLogo from "../../assets/logo_top3.png";
+import newLogo from "../../assets/logo-1.png";
 
 const logo = (
   <div className={styles.logo}>

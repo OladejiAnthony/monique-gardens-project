@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CeoProfile.module.scss";
-import ceoImage from "../../assets/ceoImage.png";
+import ceoImage from "../../assets/Ceo-profile.jpg";
 
 const CeoProfile = () => {
   return (

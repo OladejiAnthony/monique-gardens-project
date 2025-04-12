@@ -54,8 +54,11 @@ const NewsDetails = () => {
           <p>{newsItem.desc}</p>
         </div>
       </div>
-      <div>
+
+      <div className="other-images">
         <img src={newsItem.otherImages} alt="otherPics" />
+        <img src={newsItem.secondImage} alt="secondPics" />
+        <img src={newsItem.thirdImage} alt="thirdPics" />
       </div>
 
       <div className="heading">
