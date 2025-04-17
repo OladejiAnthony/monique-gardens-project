@@ -4,8 +4,8 @@ import TestiSlide from "./TestiSlide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 //import icon from "../../../image/african-man.png"
-import aam from "../../assets/leader-1.png";
-import am from "../../assets/leader-2.png";
+import aam from "../../assets/testimonial_armti.jpg";
+import msEl from "../../assets/testimonial_cnfa-boss.jpg";
 import aaw from "../../assets/leader-3.png";
 import td from "../../assets/leader-4.png";
 import todd from "../../assets//leader-5.png";
@@ -121,13 +121,13 @@ const Testimonial = () => {
               name="Mrs Ishola"
               position="ARMTI/ Admin, ARMTI"
               src={aam}
-              description="We are a one stop technology and innovation agency. With years of great achievements and delivering quality products and services to our ambitious clients"
+              description="Impressive! The people at Monique Gardens and Horticultural Arena understand the Agric business. Little wonder, the founder and CEO, Dr Monica Sunnie-Ododo, is well endowed with the required professional and grassroot competence."
             />
             <TestiSlide
               name="Ms Elebthel"
               position="CNFA Director"
-              src={am}
-              description="We are a one stop technology and innovation agency. With years of great achievements and delivering quality products and services to our ambitious clients"
+              src={msEl}
+              description="I enjoyed my visit. I believe Monique Gardens & Horticultural Arena (MGHA) is an Agric outfit worth partnering with; they’re proactive and they deliver."
             />
             <TestiSlide
               name="Akindele Bewaji"

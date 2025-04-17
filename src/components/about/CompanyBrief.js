@@ -10,7 +10,7 @@ const CompanyBrief = () => {
         <img src={companyImage} alt="ceo" className={styles.ceoImage} />
       </div>
       <div className={styles.leftHS}>
-        <h2>Monique Gardens Brief</h2>
+        <h2>Brief History</h2>
         <p>
           Monique Gardens and Horticultural Arena began with an idea; and Mrs
           Monica Sunnie-Ododo, PhD was and remained determined in the
