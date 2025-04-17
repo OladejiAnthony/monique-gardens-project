@@ -19,12 +19,14 @@ const CompanyBrief = () => {
           aquaponics has played a vital role. Monique Gardens and Horticultural
           Arena is an agricultural outfit that distributes tree crops,
           vegetables, Birds (eg, Broiler, Noiler, Layer, Turkey, Guinea fowl and
-          fish. They also produce seedling for small and large scale farmers who
-          may want to buy in bulks. Seedlings like oil palm, coconut, cocoa,
-          coffea, oranges/citrus, shadoc, guava, mango, date-palm amongst
-          others. Monique Gardens as popularly known also provides consulting
-          services, training services, excursions and to show our results and
-          lead by example we also produce and deliver harvested products.
+          fish etc. They also produce improved seedling for small and large
+          scale farmers who may want to buy in bulk. Seedlings like cashew
+          (polyclonal cashew and others), oil palm, coconut, cocoa, coffea,
+          oranges/citrus, shadoc, guava, mango, date-palm amongst others.
+          Monique Gardens as popularly known also provides consulting services,
+          training services, excursions (Agricultural Tourism) and to show our
+          results and lead by example we also produce and deliver harvested
+          products.
         </p>
         <Link to="/contact" className="--btn-deepgreen --p">
           Contact Us

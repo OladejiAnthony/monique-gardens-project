@@ -19,6 +19,6 @@ export const sliderData = [
   {
     image: require("../../assets/seedlings.jpg"),
     heading: "Need Seedlings in bulk?",
-    desc: "We raise seedlings for farmers who wish to buy in bulks.",
+    desc: "We raise seedlings for farmers who wish to buy in bulk.",
   },
 ];

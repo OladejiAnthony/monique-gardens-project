@@ -16,9 +16,9 @@ const VisionMission = () => {
           <div className="lower_line"></div>
         </div>
         <p>
-          To build a generation of empowered women and youth transforming
-          agriculture into a path to prosperity through innovation,
-          entrepreneurship, and sustainable practices.
+          To cultivate a generation of empowered women and youth who are
+          transforming agriculture into a dynamic pathway to prosperity—driven
+          by innovation, entrepreneurship, and sustainable solutions.
         </p>
       </div>
     </div>

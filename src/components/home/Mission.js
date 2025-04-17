@@ -13,12 +13,13 @@ const Mission = () => {
           <div className="lower_line"></div>
         </div>
         <p>
-          We are committed to inspiring and equipping women and youth with the
-          knowledge, skills, and resources to thrive in agriculture and
-          agribusiness. Through training, capacity building, and awareness
-          programs, we promote research-driven practices, smart use of space,
-          and the integration of technology to create sustainable livelihoods
-          and build the next generation of agricultural millionaires.
+          We are dedicated to empowering women and youth by providing the
+          knowledge, skills, and resources they need to excel in agriculture and
+          agribusinesses. Through strategic training, capacity development, and
+          awareness initiatives, we champion research-based practices, efficient
+          land use, and the integration of cutting-edge technology. Our mission
+          is to foster sustainable livelihoods and nurture the next generation
+          of agricultural leaders and  millionaires.
         </p>
       </div>
       <div className="mission__image">

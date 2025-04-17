@@ -22,7 +22,7 @@ const Team = () => {
       <div className="leaders__images">
         <div className="leader_image">
           <img src={leader1} alt="leader1" />
-          <h3>Dr Mrs Monica Ododo</h3>
+          <h3>Dr Mrs Monica Sunnie-Ododo</h3>
           <p>CEO</p>
         </div>
         <div className="leader_image">
@@ -36,14 +36,9 @@ const Team = () => {
           <p>Poultry Farming Lecturer</p>
         </div>
         <div className="leader_image">
-          <img src={leader3} alt="leader3" />
-          <h3>Mr Yinka Adeleke </h3>
-          <p>Poultry Farming Trainer</p>
-        </div>
-        <div className="leader_image">
-          <img src={leader7} alt="leader7" />
-          <h3>Mr Stephen Ojo Alasi</h3>
-          <p>Fishery Lecturer (Animal Husbandry)</p>
+          <img src={leader11} alt="leader11" />
+          <h3>Prof W.B Akanbi</h3>
+          <p>Crop Production Lecturer</p>
         </div>
         <div className="leader_image">
           <img src={leader4} alt="leader4" />
@@ -57,13 +52,8 @@ const Team = () => {
         </div>
         <div className="leader_image">
           <img src={leader8} alt="leader8" />
-          <h3>Sophia Olanrewaju ESQ 1</h3>
+          <h3>Mrs Sophia Olanrewaju Esq</h3>
           <p>Entreprenuership and Communication skills</p>
-        </div>
-        <div className="leader_image">
-          <img src={leader9} alt="leader9" />
-          <h3>Dr Femi Olabanji</h3>
-          <p>Animal Husbandry Lecturer</p>
         </div>
         <div className="leader_image">
           <img src={leader10} alt="leader10" />
@@ -71,14 +61,24 @@ const Team = () => {
           <p>Post Harvest Lecturer</p>
         </div>
         <div className="leader_image">
-          <img src={leader11} alt="leader11" />
-          <h3>Prof Akanbi</h3>
-          <p>Crop Production Lecturer</p>
+          <img src={leader7} alt="leader7" />
+          <h3>Mr Stephen Ojo Alasi</h3>
+          <p>Fishery Lecturer (Animal Husbandry)</p>
+        </div>
+        <div className="leader_image">
+          <img src={leader9} alt="leader9" />
+          <h3>Dr Femi Olabanji</h3>
+          <p>Team Leadership & Computer Lecturer</p>
         </div>
         <div className="leader_image">
           <img src={leader12} alt="leader12" />
           <h3>Dr Rihanat Asafa </h3>
           <p>Crop Production Lecturer 2</p>
+        </div>
+        <div className="leader_image">
+          <img src={leader3} alt="leader3" />
+          <h3>Mr Yinka Adeleke </h3>
+          <p>Poultry Farming Trainer</p>
         </div>
       </div>
     </div>
