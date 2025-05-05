@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
-import newLogo from "../../assets/logo_top3.png";
+import newLogo from "../../assets/logo-1.png";
 
 const Footer = () => {
   const date = new Date();
@@ -11,9 +11,14 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.about}>
-          <Link to="/">
-            <img src={newLogo} alt="logo" className={styles.logo} />
-          </Link>
+          <div className={styles.logoContainer}>
+            <Link to="/">
+              <img src={newLogo} alt="logo" className={styles.logo} />
+            </Link>
+            <h1 className={styles.logoText}>
+              Monique Gardens and Horticultural Arena
+            </h1>
+          </div>
 
           <p>
             Monique Gardens is an agricultural outfit that is into production &

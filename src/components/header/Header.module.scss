@@ -7,7 +7,7 @@
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   background-color: var(--color-dark);
   color: var(--color-green);
 
@@ -223,7 +223,7 @@ header {
     }
     .cart {
       display: block;
-      padding: 5px 0;
+      padding: 0px 0;
       // border-bottom: 1px solid #333;
       a {
         color: var(--color-green);
@@ -233,7 +233,7 @@ header {
         }
         p {
           position: absolute;
-          top: -1rem;
+          top: 0rem;
           left: 5rem;
           font-weight: 500;
           color: var(--color-green);
@@ -251,7 +251,8 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+      margin-left: -7rem;
       > * {
         margin-left: 0rem;
       }

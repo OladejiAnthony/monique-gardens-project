@@ -1,6 +1,7 @@
 .news__section {
   position: relative;
   min-height: 80vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +19,7 @@
     margin-top: 4rem;
 
     .header__box {
-      width: 442px;
+      width: 100%;
       height: 72px;
       text-align: center;
       position: relative;

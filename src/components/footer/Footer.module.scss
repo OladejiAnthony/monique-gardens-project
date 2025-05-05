@@ -4,6 +4,7 @@
   background-color: var(--color-dark);
   color: #fff;
   padding: 2rem 0;
+  width: 100vw;
 
   .container {
     display: flex;
@@ -28,12 +29,54 @@
     align-items: center;
     justify-content: space-between;
 
-    a {
+    .logoContainer {
+      display: flex;
+      flex-direction: column; // Stack vertically on small screens
+      align-items: center;
       width: 100%;
-      .logo {
-        width: 100%;
-        height: auto;
+      margin-bottom: 1rem;
+
+      @include mobile {
+        flex-direction: row; // Keep horizontal layout on mobile if preferred
+        justify-content: center; // Center items
+        flex-wrap: wrap; // Allow wrapping if needed
+      }
+
+      a {
+        width: 30%;
+        min-width: 100px; // Prevent logo from getting too small
+        height: auto; // Make height responsive
         margin-bottom: 1rem;
+
+        @include mobile {
+          width: 40%; // Adjust logo width on mobile
+          margin-bottom: 0;
+          margin-right: 1rem; // Add spacing between logo and text
+        }
+
+        .logo {
+          width: 100%;
+          height: auto;
+          max-height: 121px; // Prevent logo from getting too tall
+        }
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        color: var(--color-deepgreen);
+        margin-bottom: 1rem;
+        text-align: center;
+
+        @include mobile {
+          font-size: 2rem; // Reduce font size on mobile
+          width: 100%; // Full width on smallest screens
+          margin-top: 0.5rem;
+          order: 2; // Move below logo if stacked
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.8rem; // Even smaller on very small screens
+        }
       }
     }
 
@@ -132,4 +175,7 @@
       font-size: 1.4rem;
     }
   }
+}
+
+@media (max-width: 768px) {
 }

@@ -126,7 +126,7 @@ const ViewGallery = () => {
     <>
       {isLoading && <Loader />}
       <div className={styles.table}>
-        <h2>Gallery Collectiosn</h2>
+        <h2>Gallery Collection</h2>
         {/*Search Input */}
         <div className={styles.search}>
           <p>
