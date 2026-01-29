@@ -14,11 +14,11 @@ const CeoProfile = () => {
           Agricultural Heritage. She currently works as the Deputy Director with
           the National Commission for Museums and Monuments in the Department of
           Heritage Services. And she has worked with and offered several
-          insightful contributions to the commission in the last 20 years. Dr
+          insightful contributions to the commission in the last 25 years. Dr
           Monica Sunnie-Ododo is the notable CEO of Monique Gardens and
           Horticultural Arena; an agricultural outfit that distributes improved
           varieties of tree crops, vegetables, Birds (e.g, Broiler, Noiler,
-          Layer, Turkey, Guinea fowl and fish) etc. It also offers training and
+          Layer, Turkey, Guinea fowl, Rabbit and fish) etc. It also offers training and
           agricultural tourism services. She is happily married and blessed with
           beautiful children.
         </p>

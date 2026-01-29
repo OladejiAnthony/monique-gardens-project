@@ -4,7 +4,7 @@ import TestiSlide from "./TestiSlide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 //import icon from "../../../image/african-man.png"
-import aam from "../../assets/testimonial_armti.jpg";
+import aam from "../../assets/new_testimonial_armti.jpeg";
 import msEl from "../../assets/testimonial_cnfa-boss.jpg";
 import aaw from "../../assets/leader-3.png";
 import td from "../../assets/leader-4.png";
